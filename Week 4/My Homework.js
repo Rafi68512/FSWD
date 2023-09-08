@@ -52,3 +52,80 @@ let [evenIndexArray, oddIndexArray] = randomValues.reduce(
 console.log("Array nilai acak:", randomValues);
 console.log("Array pada index genap:", evenIndexArray);
 console.log("Array pada index ganjil:", oddIndexArray);
+
+function calculation(arr1, arr2) {
+  // Menghitung nilai Min
+  function getMin(arr) {
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] < min) {
+        min = arr[i];
+      }
+    }
+    return min;
+  }
+
+  // Menghitung nilai Max
+  function getMax(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+      }
+    }
+    return max;
+  }
+
+  // Menghitung nilai Total
+  function getTotal(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      total += arr[i];
+    }
+    return total;
+  }
+
+  // Menghitung nilai Rata-rata
+  function getAverage(arr) {
+    if (arr.length === 0) {
+      return 0;
+    }
+    const total = getTotal(arr);
+    return total / arr.length;
+  }
+
+  const minValue = getMin([...arr1, ...arr2]);
+  const maxValue = getMax([...arr1, ...arr2]);
+  const totalValue = getTotal([...arr1, ...arr2]);
+  const averageValue = getAverage([...arr1, ...arr2]);
+
+  return {
+    min: minValue,
+    max: maxValue,
+    total: totalValue,
+    average: averageValue,
+  };
+}
+
+const statistics = calculation(evenIndexArray, oddIndexArray);
+
+console.log("Statistik dari kedua array:");
+console.log("Nilai Minimum:", statistics.min);
+console.log("Nilai Maksimum:", statistics.max);
+console.log("Total:", statistics.total);
+console.log("Rata-rata:", statistics.average);
+
+const statisticsEven = calculation(evenIndexArray, []);
+const statisticsOdd = calculation([], oddIndexArray);
+
+console.log("\nStatistik dari array pada index genap:");
+console.log("Nilai Minimum:", statisticsEven.min);
+console.log("Nilai Minimum:", statisticsEven.max);
+console.log("Nilai Minimum:", statisticsEven.total);
+console.log("Nilai Minimum:", statisticsEven.average);
+
+console.log("\nStatistik dari array pada index ganjil:");
+console.log("Nilai Minimum:", statisticsOdd.min);
+console.log("Nilai Minimum:", statisticsOdd.max);
+console.log("Nilai Minimum:", statisticsOdd.total);
+console.log("Nilai Minimum:", statisticsOdd.average);
