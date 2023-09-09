@@ -120,12 +120,12 @@ const statisticsOdd = calculation([], oddIndexArray);
 
 console.log("\nStatistik dari array pada index genap:");
 console.log("Nilai Minimum:", statisticsEven.min);
-console.log("Nilai Minimum:", statisticsEven.max);
-console.log("Nilai Minimum:", statisticsEven.total);
-console.log("Nilai Minimum:", statisticsEven.average);
+console.log("Nilai Maksimum:", statisticsEven.max);
+console.log("Nilai Total:", statisticsEven.total);
+console.log("Nilai Rata-rata:", statisticsEven.average);
 
 console.log("\nStatistik dari array pada index ganjil:");
 console.log("Nilai Minimum:", statisticsOdd.min);
-console.log("Nilai Minimum:", statisticsOdd.max);
-console.log("Nilai Minimum:", statisticsOdd.total);
-console.log("Nilai Minimum:", statisticsOdd.average);
+console.log("Nilai Maksimum:", statisticsOdd.max);
+console.log("Nilai Total:", statisticsOdd.total);
+console.log("Nilai Rata-rata:", statisticsOdd.average);
