@@ -1,21 +1,21 @@
 // Module NodeJS
 
 // Menghitung luas persegi
-eksports.luasPersegi = (sisi) => {
+exports.luasPersegi = (sisi) => {
   return sisi * sisi;
 };
 
 // Menghitung keliling persegi
-eksports.kelilingPersegi = (sisi) => {
+exports.kelilingPersegi = (sisi) => {
   return 4 * sisi;
 };
 
 // Menghitung luas persegi panjang
-eksports.luasPersegiPanjang = (panjang, lebar) => {
+exports.luasPersegiPanjang = (panjang, lebar) => {
   return panjang * lebar;
 };
 
 // Menghitung keliling persegi panjang
-eksports.kelilingPersegiPanjang = (panjang, lebar) => {
+exports.kelilingPersegiPanjang = (panjang, lebar) => {
   return 2 * (panjang + lebar);
 };
