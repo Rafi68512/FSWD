@@ -23,7 +23,7 @@ router.get("/:categoryId/film", async (req, res) => {
     const { categoryId } = req.params;
     // Menampilkan list film berdasarkan category
     const result = await db.query(
-      "SELECT film.title, film_category.category_id FROM film JOIN film_category ON film.film_id = category_id WHERE category_id = $1",
+      "SELECT film.title, film_category.category_id FROM film JOIN film_category ON film.film_id = film_category.film_id WHERE film_category.category_id = $1",
       [categoryId]
     );
     res.status(200).json(result.rows);
