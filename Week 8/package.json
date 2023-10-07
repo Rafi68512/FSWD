@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "seed": "node routes/actor.js"
+    "seed": "node db/seeding.js"
   },
   "keywords": [],
   "author": "",

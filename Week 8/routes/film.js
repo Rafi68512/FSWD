@@ -5,7 +5,7 @@ const db = require("../db");
 
 // Menampilkan data seluruh list film
 // Endpoint: GET /film
-router.get("/", async (req, res) => {
+router.get("/", async (res) => {
   try {
     // Menampilkan seluruh list film
     const result = await db.query("SELECT * FROM film");
@@ -22,7 +22,9 @@ router.get("/:filmId", async (req, res) => {
   try {
     const { filmId } = req.params;
     // Menampilkan film berdasarkan id
-    const result = await db.query("SELECT * FROM film WHERE id = $1", [filmId]);
+    const result = await db.query("SELECT * FROM film WHERE film_id = $1", [
+      filmId,
+    ]);
     if (result.rows.length > 0) {
       res.status(200).json(result.rows[0]);
     } else {
