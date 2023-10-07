@@ -5,7 +5,7 @@ const db = require("../db");
 
 // Menampilkan data list category
 // Endpoint: GET /category
-router.get("/", async (res) => {
+router.get("/", async (req, res) => {
   try {
     // Menampilkan list kategori film
     const result = await db.query("SELECT * FROM film_category");

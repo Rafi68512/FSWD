@@ -6,7 +6,7 @@ const db = require("./db");
 // Middleware untuk parsing body request
 app.use(express.json());
 
-app.get("/", (res) => {
+app.get("/", (req, res) => {
   try {
     db.query("SELECT * FROM actor", (err, result) => {
       if (err) {
