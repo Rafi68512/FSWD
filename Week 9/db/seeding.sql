@@ -1,0 +1,2 @@
+-- COPY public.movies (id, title, genres, year) FROM '$$PATH$$3319.dat';
+-- COPY public.users (id, email, gender, password, role) FROM 'C:\\Users\\aspire5\\Documents\\GitHub\\FSWD\\Week 9\\db\\3318.dat';
