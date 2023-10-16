@@ -36,11 +36,13 @@ app.use(morgan("tiny"));
 
 // Require the Router
 var movies = require("./routes/movies.js");
-var users = require("./routes/users.js");
+var login = require("./routes/login.js");
+var register = require("./routes/register.js");
 
 // Use the Routes
 app.use("/movies", movies);
-app.use("/users", users);
+app.use("/login", login);
+app.use("/register", register);
 
 pool.connect((err, res) => {
   console.log(err);

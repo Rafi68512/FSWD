@@ -116,14 +116,12 @@ var router = express.Router();
 
 var pool = require("../db/query.js");
 
-// GET Movies With Pagination
+// GET Movies
 router.get("/", function (req, res) {
-  const { page = 1, limit = 10 } = req.query;
-  const offset = (page - 1) * limit;
-
   pool.query(
-    `SELECT * FROM movies LIMIT $1 OFFSET $2`,
-    [limit, offset],
+    `SELECT * FROM movies ${
+      req.query.limit ? "LIMIT " + req.query.limit : ""
+    } `,
     (error, results) => {
       if (error) {
         throw error;
@@ -193,4 +191,5 @@ router.put("/:id", function (req, res) {
   );
 });
 
+//export this router to use in our index.js
 module.exports = router;

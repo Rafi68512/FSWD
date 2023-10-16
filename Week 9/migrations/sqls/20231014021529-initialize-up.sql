@@ -13,6 +13,3 @@ CREATE TABLE public.users (
     password character varying(50),
     role character varying(50)
 );
-
-ALTER TABLE movies
-ADD CONSTRAINT unique_id UNIQUE (id);
