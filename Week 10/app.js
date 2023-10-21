@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const sequelize = require("./config/sequelize");
+const sequelize = require("./models/sequelize");
 const movieRoutes = require("./routes/movie");
 const path = require("path");
 
